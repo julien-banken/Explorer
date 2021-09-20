@@ -1,0 +1,25 @@
+{
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.exclude": {
+    "node_modules": true,
+    "package-lock.json": true,
+    "dist": true,
+    "certificates": true
+  },
+  "search.exclude": {
+    "node_modules": true,
+    "dist": true
+  },
+  "editor.lineHeight": 28,
+  "editor.rulers": [80, 120],
+  "editor.formatOnSave": false,
+  "editor.fontLigatures": true,
+  // "js/ts.implicitProjectConfig.checkJs": true,
+  "[todo]": {
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wrappingIndent": "same",
+    "editor.wordWrapColumn": 60
+  }
+}

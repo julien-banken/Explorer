@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A document explorer</title>
+  <style>
+    .dropzone,
+    .tree-view {
+      border: 1px solid black;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="container">
+      <section class="dropzone">
+        <span>Drag a folder</span>
+      </section>
+      <input class="form-control" type="file" name="pdf" multiple webkitdirectory>
+    </div>
+  </main>
+  <script src="./public/build.js"></script>
+</body>
+</html>
