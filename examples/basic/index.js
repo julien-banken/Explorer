@@ -1,5 +1,5 @@
 import { h } from '../helpers.js'
-import { dfs, TreeExplorer } from '../../src/index.js'
+import { dfs, TreeExplorer } from 'explorer'
 
 /**
  * @param {Object} tree

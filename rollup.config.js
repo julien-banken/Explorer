@@ -1,50 +1,52 @@
-import resolve from '@rollup/plugin-node-resolve'
-import commonjs from '@rollup/plugin-commonjs'
+import alias from '@rollup/plugin-alias'
+import { terser } from 'rollup-plugin-terser'
 
-export default [
-  {
-    input: 'examples/basic/index.js',
-    output: {
-      file: 'examples/basic/public/build.js',
-      format: 'iife',
-      sourcemap: true
-    },
-    plugins: [
-      resolve({
-        mainFields: ['module', 'browser', 'main'],
-        extensions: ['.mjs', '.js']
-      }),
-      commonjs()
-    ]
+export default [{
+  input: 'src/index.js',
+  output: {
+    dir: 'build',
+    format: 'es'
   },
-  {
-    input: 'examples/intermediate/index.js',
-    output: {
-      file: 'examples/intermediate/public/build.js',
-      format: 'iife',
-      sourcemap: true
-    },
-    plugins: [
-      resolve({
-        mainFields: ['module', 'browser', 'main'],
-        extensions: ['.mjs', '.js']
-      }),
-      commonjs()
-    ]
+  plugins: [
+    terser()
+  ]
+}, {
+  input: 'examples/basic/index.js',
+  output: {
+    file: 'examples/basic/public/build.js',
+    format: 'iife'
   },
-  {
-    input: 'examples/advanced/index.js',
-    output: {
-      file: 'examples/advanced/public/build.js',
-      format: 'iife',
-      sourcemap: true
-    },
-    plugins: [
-      resolve({
-        mainFields: ['module', 'browser', 'main'],
-        extensions: ['.mjs', '.js']
-      }),
-      commonjs()
-    ]
-  }
-]
+  plugins: [
+    alias({
+      entries: [
+        { find: 'explorer', replacement: './build/index.js' }
+      ]
+    })
+  ]
+}, {
+  input: 'examples/intermediate/index.js',
+  output: {
+    file: 'examples/intermediate/public/build.js',
+    format: 'iife'
+  },
+  plugins: [
+    alias({
+      entries: [
+        { find: 'explorer', replacement: './build/index.js' }
+      ]
+    })
+  ]
+}, {
+  input: 'examples/advanced/index.js',
+  output: {
+    file: 'examples/advanced/public/build.js',
+    format: 'iife'
+  },
+  plugins: [
+    alias({
+      entries: [
+        { find: 'explorer', replacement: './build/index.js' }
+      ]
+    })
+  ]
+}]

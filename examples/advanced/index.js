@@ -1,5 +1,5 @@
 import { h, toggleClass } from '../helpers.js'
-import { TreeExplorer } from '../../src/index.js'
+import { TreeExplorer } from 'explorer'
 
 /**
  * @param {Object} tree

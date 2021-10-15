@@ -1,5 +1,5 @@
 import { h } from '../helpers.js'
-import { TreeExplorer } from '../../src/index.js'
+import { TreeExplorer } from 'explorer'
 
 /**
  * @param {HTMLElement} container
