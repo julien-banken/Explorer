@@ -3,7 +3,7 @@ import { TreeExplorerWithFSH } from './TreeExplorerWithFSH.js'
 
 export class TreeExplorer {
   /**
-   * Constructor of `Explorer`
+   * Constructor of `TreeExplorer`
    */
   constructor () {
     if (window.FileSystemDirectoryHandle) {
