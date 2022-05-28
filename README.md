@@ -4,7 +4,7 @@ Firefox and the web browsers based on Chromium use different approaches to manip
 
 This library will define a **common API** that you can use to interact with a virtual file system. It will help you build your own file explorer in pure Javascript without having to worry about which browser the user is using.
 
-To build a file explorer with the library, you will have to define your own rendering functions and explorer the **tree abstraction** provided by the library. In that regards, the library will made no assumption on of the frontend framework you are using.
+To build a file explorer with the library, you will have to define your own rendering functions and explorer the **tree abstraction** provided by the library.
 
 **Disclaimer**: The library uses some features that are still considered as experimental (see [FileSystemHandle](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemFileHandle), [FileSystemEntry](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry), etc). The library only supports the read operations as the write operations are not currently supported on all web browsers.
 
@@ -44,8 +44,7 @@ dropzone.addEventListener('drop', async event => {
   }
   const item = event.dataTransfer.items[0]
   const explorer = new TreeExplorer()
-  const tree = await explorer.load(item)
-  console.log('tree', tree)
+  console.log('tree', await explorer.load(item))
 })
 ```
 
@@ -55,7 +54,7 @@ You can then render your component as you want by recursively exploring the tree
 
 To prompt the user to upload a file or a directory, you can use the `prompt` function of the `TreeExplorer` object.
 
-Exemple:
+Example:
 
 ```Javascript
 button.addEventListener('click', () => {
